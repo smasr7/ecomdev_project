@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Newsreader", Georgia, serif;
+  --font-sans: "Hanken Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --color-paper: #f1efe3;
+  --color-sheet: #f9f7ee;
+  --color-ink: #1b2a41;      /* синие чернила — оплачено */
+  --color-muted: #5f6b7a;
+  --color-rule: #cfd3c0;
+  --color-owed: #b3122a;     /* красные чернила — долг */
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  background-color: var(--color-paper);
+  /* линовка бухгалтерской книги + красное поле слева */
+  background-image:
+    linear-gradient(90deg, transparent 15px, rgb(179 18 42 / 0.35) 15px 16px, transparent 16px 19px, rgb(179 18 42 / 0.2) 19px 20px, transparent 20px),
+    repeating-linear-gradient(transparent 0 31px, rgb(27 42 65 / 0.07) 31px 32px);
+  background-attachment: fixed;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-ink);
+  outline-offset: 2px;
+}
